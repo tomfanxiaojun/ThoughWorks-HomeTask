@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ThoughtWorks Assessment Home Work For FanXiaoJun(Ivan)</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="continer">
+        <header>
+            <div class="header">
+                Signed in as <span id='userName' class="username cursor-pointer"></span>
+                <span class="logout-icon">-</span><span class="logout cursor-pointer">Sign Out</span>
+            </div>
+        </header>
+        <nav>
+            <div>
+                <div class="title">Cruise</div>
+                <div class="navs">
+                    <ul>
+                        <li id='bashboard' class=" cursor-pointer">BASHBOARD</li>
+                        <li id='curise' class=" cursor-pointer">MY CRUISE</li>
+                        <li id='agents' class=" cursor-pointer active-nav">AGENTS</li>
+                        <li id='help' class=" cursor-pointer">HELP</li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </nav>
+        <div class="content black-border" id="main">
+            <div id='tags' class="tags">
+                <span class="agents">Agents</span>
+            </div>
+            <article class="articles" id="articles">
+            </article>
+            <aside class="aside">
+                <div class="summary">
+                    <div class="baseinfo-title">Summary</div>
+                    <div class="summary-list">
+                        <span class="status">building</span><span class="count" id='building'>2</span>
+                    </div>
+                    <div class="summary-list">
+                        <span class="status">idle</span><span class="count" id='idle'>2</span>
+                    </div>
+                </div>
+                <div class="history">
+                    <div class="baseinfo-title">History</div>
+                    <ul id='history'>
+                    </ul>
+                </div>
+            </aside>
+            <div class="clear"></div>
+        </div>
+        <footer>
+            Copyright:Thoughworks Inc.
+        </footer>
+    </div>
+    <script id="tpl" type="text/plain">
+        <section id="agent_{id}" class="section {status-style}">
+            <div class="icon"></div>
+            <div class="details">
+                <div class="base-info"><span class="base-info-item email">{email}</span> <span class="base-info-item "><span class="split">|</span>{status}</span> <span class="base-info-item "><span class="split">|</span>{ip}</span> <span class="base-info-item "><span class="split">|</span>{path}</span>
+                </div>
+                <div class="resources">
+                    <div class="add-resource"><span class="add-icon">+</span><span class="add-desc" id="addResources" onclick="addResources({id})" data-agentid="1">Specify Resources</span><span class="resources-split">|</span></div>
+                    <div class="resources-list"> Resources:
+                        <ul>
+                           {resources}
+                        </ul>
+                    </div>
+                </div>
+            <div id='deny' {is-show-deny} class="deny" >
+                    <div class="deny-icon"> / </div>
+                    <div class="deny-desc"> Deny </div>
+                </div>
+            </div>
+            <div class="add-resource-panel" id="agent-add-{id}" style="display:none">
+                <s><i></i></s>
+                <div class="add-panel-desc">(Separate multiple resources name wiht commas)</div>
+                <div>
+                    <input type="textbox" class="agent-input" id="agent-input-{id}">
+                    <div class="msg" id="msg-{id}" style="display:none">*Please input a resource!</div>
+                </div>
+                <div class="buttons"><span id="add-bt" onclick="addAgent({id})">Add Resources</span> <span onclick="closePanel({id})">Close</span></div>
+            </div>
+            <div class="clear"></div>
+        </section>
+    </script>
+    <script src="js/utils.js" type="text/javascript"></script>
+    <script src="js/AgentsObjReFactory.js" type="text/javascript"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+</body>
+
+</html>

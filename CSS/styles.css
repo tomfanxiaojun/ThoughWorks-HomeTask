@@ -1,0 +1,384 @@
+html {
+    font-size: 100px;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.show{
+    display: ""    
+}
+.hide{
+    display: none;
+}
+.clear {
+    clear: both;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.continer {
+    margin: 0.3rem 0.8rem;
+    min-width: 8rem;
+}
+
+.header {
+    font-size: 0.16rem;
+    text-align: right;
+}
+
+.username {
+    text-decoration: underline;
+    font-size: 0.18rem;
+    font-weight: bold;
+}
+
+.logout {
+    text-decoration: underline;
+}
+
+nav {
+    margin-top: 0.1rem;
+}
+
+.title {
+    float: left;
+    font-size: .22rem;
+    font-weight: bold;
+}
+
+.navs {
+    float: right;
+    font-size: 0.16rem;
+}
+
+.black-border {
+    border: .02rem solid black;
+}
+
+.navs ul li {
+    display: inline-block;
+    float: left;
+    padding: 0.03rem 0.06rem;
+    border-radius: .15rem .15rem 0rem 0rem;
+    margin-right: .02rem;
+    border-top: .02rem solid black;
+    border-left: .02rem solid black;
+    border-right: .02rem solid black;
+}
+
+.active-nav {
+    background: rgb(96, 96, 96);
+    color: white;
+    position: relative;
+}
+
+.active-nav::after {
+    content: "";
+    width: .76rem;
+    height: 0.04rem;
+    background: #606060;
+    position: absolute;
+    left: -.01rem;
+    top: .23rem;
+}
+
+.content {
+    height: auto;
+    font-size: .14rem;
+}
+
+.tags {
+    height: .4rem;
+    line-height: .3rem;
+    background: rgb(96, 96, 96);
+    padding-left: .1rem;
+    padding-right: .1rem;
+    border-bottom: .02rem solid black;
+}
+
+.agents {
+    color: rgb(251, 251, 251);
+    font-size: .14rem;
+}
+
+.tag {
+    font-size: .1rem;
+    display: inline-block;
+    border: .02rem solid black;
+    padding: .01rem .1rem;
+    height: .22rem;
+    line-height: .22rem;
+    border-radius: .2rem;
+    background: gray;
+    width: .44rem;
+    text-align: center;
+    margin-top: .06rem;
+    margin-right: 0.05rem;
+}
+
+.active-tag {
+    background: #DED8D8;
+}
+
+.articles {
+    float: left;
+    min-width: 75%;
+    height: 100%;
+}
+
+.aside {
+    float: left;
+    min-width: 24%;
+    margin-left: .12rem;
+   /* border-left: .02rem solid black;*/
+}
+
+.section {
+    height: auto;
+    border: .02rem solid black;
+    margin: 0.2rem;
+    border-radius: 0.1rem;
+    position: relative;
+}
+
+.deny-status {
+    background: rgb(204, 232, 181);
+}
+
+.building-status {
+    background: rgb(255, 251, 185);
+}
+
+.baseinfo-title {
+    color: black;
+    font-size: .16rem;
+    font-weight: bold;
+    border-bottom: .01rem solid #D8D8D8;
+    margin: .1rem;
+    padding-bottom: .1rem;
+}
+
+.summary-list {
+    margin: .1rem;
+}
+
+.count {
+    float: right;
+    margin-right: .8rem;
+}
+
+.history ul {
+    list-style: none;
+}
+
+.history ul li {
+    cursor: pointer;
+    font-size: .10rem;
+    margin: .1rem;
+}
+
+.icon {
+    float: left;
+    margin: .05rem .2rem;
+    width: .4rem;
+    height: .4rem;
+    border-radius: 50%;
+    background: rgb(146, 146, 146);
+}
+
+.details {
+    float: left;
+    width: 90%;
+}
+
+.base-info-item {
+    margin-top: 0.05rem;
+    margin-bottom: 0.05rem;
+    font-weight: bold;
+    font-size: .12rem;
+}
+
+.base-info .email {
+    margin-right: .15rem;
+}
+
+.split {
+    color: gray;
+}
+
+.resources {
+    margin-top: .1rem;
+}
+
+.resources div {
+    float: left;
+    font-size: .10rem;
+}
+
+.resources ul {
+    display: inline-block;
+    list-style: none;
+}
+
+.resources ul li {
+    display: inline-block;
+}
+
+.add-icon {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-desc {
+    text-decoration: underline;
+    margin-left: .04rem;
+    cursor: pointer;
+}
+
+.resources-split {
+    color: gray;
+    margin: 0rem .02rem;
+}
+
+.delete-resource {
+    display: inline-block;
+    width: .1rem;
+    height: .1rem;
+    line-height: .08rem;
+    text-align: center;
+    border: .01rem solid gray;
+    color: gray;
+    border-radius: .03rem;
+    cursor: pointer;
+    margin-right: .1rem;
+}
+
+.deny {
+    float: right !important;
+}
+
+.deny-icon {
+    float: left;
+    width: .1rem;
+    height: .1rem;
+    line-height: .1rem;
+    text-align: center;
+    border: .01rem solid black;
+    border-radius: 50%;
+    font-size: 0.1rem;
+    color: black;
+    cursor: pointer;
+}
+
+.deny-desc {
+    float: right;
+    font-size: 0.1rem;
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: .05rem;
+}
+
+footer {
+    font-size: .1rem;
+    margin-top: .1rem;
+}
+
+.logout-icon {
+    font-size: 0.08rem;
+    font-weight: bold;
+}
+
+.logout-icon::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-width: .05rem .05rem .05rem .05rem;
+    border-style: solid;
+    border-color: transparent transparent transparent #333;
+}
+
+.add-resource-panel {
+    height: 1.2rem;
+    width: 4rem;
+    border: .02rem solid rgb(85, 61, 0);
+    background: rgb(224, 237, 212);
+    position: absolute;
+    top: 0.68rem;
+    left: 0.5rem;
+    border-radius: .2rem;
+    display: none;
+    z-index: 1000;
+    -webkit-transition: all 3s ease-out;
+    /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+    transition: all .3s ease-out;
+}
+
+.add-resource-panel s {
+    position: absolute;
+    top: -.56rem;
+    left: .2rem;
+    display: block;
+    height: 0;
+    width: 0;
+    font-size: 0;
+    line-height: 0;
+    border-color: transparent transparent rgb(85, 61, 0) transparent;
+    border-style: dashed dashed solid dashed;
+    border-width: .28rem;
+}
+
+.add-resource-panel s i {
+    position: absolute;
+    top: -.26rem;
+    left: -.27rem;
+    display: block;
+    height: 0;
+    width: 0;
+    font-size: 0;
+    line-height: 0;
+    border-color: transparent transparent rgb(224, 237, 212) transparent;
+    border-style: dashed dashed solid dashed;
+    border-width: .28rem;
+}
+
+.add-panel-desc {
+    font-size: .12rem;
+    margin: .1rem;
+}
+
+.agent-input {
+    margin-left: .1rem;
+    width: 3.8rem;
+}
+
+.buttons {
+    margin: .1rem;
+    font-size: .12rem;
+}
+
+.buttons span {
+    display: inline-block;
+    border: .02rem solid black;
+    padding: .06rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(top, #f6f6f6, #eae8e8);
+    background-image: -moz-linear-gradient(top, #f6f6f6, #eae8e8);
+    background-image: -ms-linear-gradient(top, #f6f6f6, #eae8e8);
+    background-image: -o-linear-gradient(top, #f6f6f6, #eae8e8);
+    background-image: linear-gradient(top, #f6f6f6, #eae8e8);
+}
+
+.msg {
+    color: red;
+    font-size: .1rem;
+    display: none;
+    margin-left: .1rem;
+}
