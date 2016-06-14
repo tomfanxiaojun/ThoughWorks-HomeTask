@@ -1,5 +1,6 @@
   var panelArr = [];
   var Agents = new UserAgents(1);
+
   function addResources(pid) {
       $("#agent-add-" + pid).show();
       panelArr.forEach(function(e, index) {
@@ -91,44 +92,46 @@
           };
       }
       initArticles('All');
+
       function initArticles(type) {
           var statusCount = Agents.statusCount(type);
           $('#building').text(statusCount['building']);
           $('#idle').text(statusCount['idle']);
           var list = "";
-          var resutlAgents=Agents.getAgentsByType(type);          
+          var resutlAgents = Agents.getAgentsByType(type);
           resutlAgents.forEach(function(e) {
+              panelArr.push(e.id);
               var tplStr = $("#tpl").html();
-              tplStr = tplStr.replaceAll('{id}', e.id)
-                  .replaceAll('{email}', e.email)
-                  .replaceAll('{status}', e.status)
-                  .replaceAll('{ip}', e.ip)
-                  .replaceAll('{path}', e.path);
+              var reg = new RegExp("\\[([^\\[\\]]*?)\\]", 'igm');
               var resources = "";
               e.resources.forEach(function(er) {
                   resources = resources + '<li id="' + er.id + '" data-agentid="' + er.agentId + '">' + er.name + ' <span class="delete-resource" onclick="deleteResources(' + er.agentId + ', ' + er.id + ') " id="' + er.id + '">x</span></li>'
               });
-              tplStr = tplStr.replaceAll('{resources}', resources);
+              e.resourcesList = resources;
               if (e.status == 'idle') {
-                  tplStr = tplStr.replaceAll('{is-show-deny}', '');
+                  e.isShowDeny = "";
               } else {
-                  tplStr = tplStr.replaceAll('{is-show-deny}', 'style="display:none "');
+                  e.isShowDeny = 'style="display:none "';
               }
-              tplStr = tplStr.replaceAll('{status-style}', e.status == 'idle' ? 'deny-status' : 'building-status');
-              list = list + tplStr;
+              e.statusStyle = (e.status == 'idle' ? 'deny-status' : 'building-status');
+              list = list + tplStr.replace(reg, function(node, key) {
+                  return e[key]; });
 
           });
           $("#articles").append(list);
-      } 
+          setFloatStyle();
+      }
+
       function setFloatStyle() {
           $(".aside")[0].style.height = 'auto';
           $(".aside")[0].style.borderLeft = "none";
           if ($(".aside")[0].offsetHeight < $(".articles")[0].offsetHeight) {
-              if ($(".aside")[0].offsetLeft > $(".articles")[0].offsetLeft + 800) {
+              if ($(".aside")[0].getBoundingClientRect().top == $(".articles")[0].getBoundingClientRect().top) {
+                  $(".aside")[0].style.borderLeft = ".02rem solid black";
                   $(".aside")[0].style.height = $(".articles")[0].offsetHeight + "px";
-                  //$(".aside")[0].style.borderLeft = ".02rem solid black";
               } else {
                   $(".aside")[0].style.borderLeft = "";
+                  $(".aside")[0].style.height = 'auto'
               }
 
           }

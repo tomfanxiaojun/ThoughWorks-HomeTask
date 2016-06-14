@@ -60,7 +60,7 @@
                 //
                 if (this[i] && this[i].setAttribute) {
                     this[i].setAttribute("style", "display:none");
-                } else {
+                } else if( this[i]){
                     this[i].style.display = "none";
                 }
 

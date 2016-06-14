@@ -127,7 +127,7 @@ nav {
 
 .articles {
     float: left;
-    min-width: 75%;
+    min-width: 72%;
     height: 100%;
 }
 
@@ -260,6 +260,7 @@ nav {
 
 .deny {
     float: right !important;
+    margin-right: .1rem;
 }
 
 .deny-icon {

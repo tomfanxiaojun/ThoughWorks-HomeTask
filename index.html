@@ -57,33 +57,33 @@
             Copyright:Thoughworks Inc.
         </footer>
     </div>
-    <script id="tpl" type="text/plain">
-        <section id="agent_{id}" class="section {status-style}">
+    <script id="tpl" type="text/html">
+        <section id="agent_[id]" class="section [status-style]">
             <div class="icon"></div>
             <div class="details">
-                <div class="base-info"><span class="base-info-item email">{email}</span> <span class="base-info-item "><span class="split">|</span>{status}</span> <span class="base-info-item "><span class="split">|</span>{ip}</span> <span class="base-info-item "><span class="split">|</span>{path}</span>
+                <div class="base-info"><span class="base-info-item email">[email]</span> <span class="base-info-item "><span class="split">|</span>[status]</span> <span class="base-info-item "><span class="split">|</span>[ip]</span> <span class="base-info-item "><span class="split">|</span>[path]</span>
                 </div>
                 <div class="resources">
-                    <div class="add-resource"><span class="add-icon">+</span><span class="add-desc" id="addResources" onclick="addResources({id})" data-agentid="1">Specify Resources</span><span class="resources-split">|</span></div>
+                    <div class="add-resource"><span class="add-icon">+</span><span class="add-desc" id="addResources" onclick="addResources([id])" data-agentid="1">Specify Resources</span><span class="resources-split">|</span></div>
                     <div class="resources-list"> Resources:
                         <ul>
-                           {resources}
+                           [resourcesList]
                         </ul>
                     </div>
                 </div>
-            <div id='deny' {is-show-deny} class="deny" >
+            <div id='deny' [isShowDeny] class="deny" >
                     <div class="deny-icon"> / </div>
                     <div class="deny-desc"> Deny </div>
                 </div>
             </div>
-            <div class="add-resource-panel" id="agent-add-{id}" style="display:none">
+            <div class="add-resource-panel" id="agent-add-[id]" style="display:none">
                 <s><i></i></s>
                 <div class="add-panel-desc">(Separate multiple resources name wiht commas)</div>
                 <div>
-                    <input type="textbox" class="agent-input" id="agent-input-{id}">
-                    <div class="msg" id="msg-{id}" style="display:none">*Please input a resource!</div>
+                    <input type="textbox" class="agent-input" id="agent-input-[id]">
+                    <div class="msg" id="msg-[id]" style="display:none">*Please input a resource!</div>
                 </div>
-                <div class="buttons"><span id="add-bt" onclick="addAgent({id})">Add Resources</span> <span onclick="closePanel({id})">Close</span></div>
+                <div class="buttons"><span id="add-bt" onclick="addAgent([id])">Add Resources</span> <span onclick="closePanel([id])">Close</span></div>
             </div>
             <div class="clear"></div>
         </section>
